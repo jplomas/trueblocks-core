@@ -58,7 +58,7 @@ string_q toGoPackage(const CCommandOption& cmd) {
         return "";
 
     const char* STR_NEW_CHIFRA_ROUTE =
-        "\t[{API_ROUTE}]Pkg \"github.com/TrueBlocks/trueblocks-core/src/apps/chifra/internal/[{API_ROUTE}]\"";
+        "\t[{API_ROUTE}]Pkg \"github.com/theQRL/trueblocks-core/src/apps/chifra/internal/[{API_ROUTE}]\"";
 
     ostringstream os;
     os << cmd.Format(STR_NEW_CHIFRA_ROUTE) << endl;

@@ -7,7 +7,6 @@ package transactionsPkg
 import (
 	"github.com/theQRL/trueblocks-core/src/apps/chifra/pkg/base"
 	"github.com/theQRL/trueblocks-core/src/apps/chifra/pkg/config"
-	"github.com/theQRL/trueblocks-core/src/apps/chifra/pkg/rpc"
 	"github.com/theQRL/trueblocks-core/src/apps/chifra/pkg/validate"
 )
 
@@ -60,9 +59,9 @@ func (opts *TransactionsOptions) validateTransactions() error {
 		}
 
 		if opts.Traces {
-			if !opts.Conn.IsNodeTracing() {
-				return validate.Usage("{0} requires tracing, err: {1}", "chifra transactions --traces", rpc.ErrTraceBlockMissing)
-			}
+			// if !opts.Conn.IsNodeTracing() {
+			// 	return validate.Usage("{0} requires tracing, err: {1}", "chifra transactions --traces", rpc.ErrTraceBlockMissing)
+			// }
 
 			if opts.Uniq {
 				return validate.Usage("The {0} option is not available{1}.", "--uniq", " with the --traces option")

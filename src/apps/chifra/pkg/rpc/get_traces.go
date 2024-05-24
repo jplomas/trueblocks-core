@@ -27,7 +27,7 @@ func (conn *Connection) GetTracesByBlockNumber(bn uint64) ([]types.SimpleTrace, 
 		}
 	}
 
-	method := "trace_block"
+	method := "debug_traceBlockByNumber"
 	params := query.Params{fmt.Sprintf("0x%x", bn)}
 
 	if rawTraces, err := query.Query[[]types.RawTrace](conn.Chain, method, params); err != nil {

@@ -7,7 +7,6 @@ package tracesPkg
 import (
 	"github.com/theQRL/trueblocks-core/src/apps/chifra/pkg/config"
 	"github.com/theQRL/trueblocks-core/src/apps/chifra/pkg/logger"
-	"github.com/theQRL/trueblocks-core/src/apps/chifra/pkg/rpc"
 	"github.com/theQRL/trueblocks-core/src/apps/chifra/pkg/types"
 	"github.com/theQRL/trueblocks-core/src/apps/chifra/pkg/validate"
 )
@@ -32,9 +31,9 @@ func (opts *TracesOptions) validateTraces() error {
 			return validate.Usage("Please supply one or more transaction identifiers or filters.")
 		}
 
-		if !opts.Conn.IsNodeTracing() {
-			return validate.Usage("{0} requires tracing, err: {1}", "chifra traces", rpc.ErrTraceBlockMissing)
-		}
+		// if !opts.Conn.IsNodeTracing() {
+		// 	return validate.Usage("{0} requires tracing, err: {1}", "chifra traces", rpc.ErrTraceBlockMissing)
+		// }
 
 		if !validate.HasArticulationKey(opts.Articulate) {
 			return validate.Usage("The {0} option requires an Etherscan API key.", "--articulate")

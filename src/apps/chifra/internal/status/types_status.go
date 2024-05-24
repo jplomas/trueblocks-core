@@ -208,7 +208,7 @@ func (opts *StatusOptions) GetSimpleStatus(diagnose bool) (*simpleStatus, error)
 		IsTesting:     testMode,
 		IsApi:         opts.Globals.IsApiMode(),
 		IsArchive:     opts.Conn.IsNodeArchive(),
-		IsTracing:     opts.Conn.IsNodeTracing(),
+		IsTracing:     true, // Zond: hard code this here
 		HasEsKey:      validate.HasArticulationKey(true),
 		HasPinKey:     len(config.GetKey("pinata").ApiKey) > 0 || len(config.GetKey("pinata").Secret) > 0,
 		Chain:         chain,
